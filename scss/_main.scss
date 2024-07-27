@@ -1,0 +1,91 @@
+.intro {
+    padding-top: toRem(287);
+    min-height: toRem(1903);
+    background:
+        linear-gradient(330deg, rgba(11, 29, 38, 0) 31.06%, #0b1d26 108.93%),
+        url("../img/bg-bottom.png") center bottom/ contain no-repeat,
+        url("../img/bg-top.png") center bottom/ contain no-repeat,
+        url("../img/bg-sky.png") top / contain no-repeat;
+
+    // .intro__container
+
+    &__container {
+        display: flex;
+        justify-content: center;
+    }
+
+    // .intro__content
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: toRem(32);
+        // max-width: toRem(950);
+        @include adaptiveValue("max-width", 950, 280);
+        margin-left: toRem(30);
+    }
+
+    // .intro__subtitle
+
+    &__subtitle {
+        flex-shrink: 0;
+    }
+
+    // .intro__title
+
+    &__title.section-title {
+        @include adaptiveValue("font-size", 88, 36);
+        font-weight: 600;
+        line-height: 1.136;
+        text-transform: capitalize;
+    }
+
+    // .intro__link
+
+    &__link {
+        font-weight: 700;
+        display: flex;
+        gap: toRem(16);
+        flex-shrink: 0;
+        transition: color 0.3s;
+        @media (any-hover) {
+            &:hover {
+                color: $accentColor;
+                .intro__link-icon {
+                    fill: $accentColor;
+                }
+            }
+        }
+    }
+
+    // .intro__link-icon
+
+    &__link-icon {
+        width: toRem(16);
+        height: toRem(24);
+        fill: $mainTextColor;
+        transition: fill 0.3s;
+    }
+}
+.subtitle {
+    font-weight: 800;
+    letter-spacing: toRem(6);
+    text-transform: uppercase;
+    color: $accentColor;
+    display: flex;
+    align-items: center;
+    column-gap: toRem(24);
+    &::before {
+        content: "";
+        width: toRem(72);
+        height: toRem(2);
+        background-color: $accentColor;
+        flex-shrink: 0;
+    }
+}
+.section-title {
+    font-family: "Chronicle Display", serif;
+    font-size: toRem(64);
+    font-weight: 600;
+}
