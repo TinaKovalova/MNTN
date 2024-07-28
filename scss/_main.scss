@@ -3,8 +3,8 @@
     min-height: toRem(1903);
     background:
         linear-gradient(330deg, rgba(11, 29, 38, 0) 31.06%, #0b1d26 108.93%),
-        url("../img/bg-bottom.png") center bottom/ contain no-repeat,
-        url("../img/bg-top.png") center bottom/ contain no-repeat,
+        url("../img/bg-bottom.png") center / contain no-repeat,
+        url("../img/bg-top.png") center / contain no-repeat,
         url("../img/bg-sky.png") top / contain no-repeat;
 
     // .intro__container
@@ -44,28 +44,12 @@
     // .intro__link
 
     &__link {
-        font-weight: 700;
-        display: flex;
-        gap: toRem(16);
         flex-shrink: 0;
-        transition: color 0.3s;
-        @media (any-hover) {
-            &:hover {
-                color: $accentColor;
-                .intro__link-icon {
-                    fill: $accentColor;
-                }
-            }
-        }
     }
 
     // .intro__link-icon
 
     &__link-icon {
-        width: toRem(16);
-        height: toRem(24);
-        fill: $mainTextColor;
-        transition: fill 0.3s;
     }
 }
 .subtitle {
@@ -84,8 +68,164 @@
         flex-shrink: 0;
     }
 }
-.section-title {
+.title {
     font-family: "Chronicle Display", serif;
-    font-size: toRem(64);
+    @include adaptiveValue("font-size", 64, 26);
+    // font-size: toRem(64);
     font-weight: 600;
 }
+.section-link {
+    min-width: max-content;
+    font-weight: 700;
+    display: flex;
+    gap: toRem(16);
+    transition: color 0.3s;
+    &__icon {
+        width: toRem(16);
+        height: toRem(24);
+        fill: $mainTextColor;
+        transition: fill 0.3s;
+        &.section-link__icon--horisontal {
+            transform: rotate(-90deg);
+        }
+    }
+    @media (any-hover) {
+        &:hover {
+            color: $accentColorDark;
+            .section-link__icon {
+                fill: $accentColorDark;
+            }
+        }
+    }
+}
+
+//------------------------------------------
+.guide {
+    // .guide__container
+
+    &__container {
+    }
+
+    // .guide__list
+
+    &__list {
+    }
+
+    // .guide__item
+
+    &__item:nth-child(odd) {
+        .guide-block__wrapper .guide-block__content {
+            order: 2;
+        }
+    }
+
+    // .guide__element
+
+    &__element {
+    }
+}
+.guide-block {
+    // .guide-block__body
+
+    &__wrapper {
+        // border: 2px solid orange;
+        max-width: toPercent(1462, $containerWidth);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: toRem(20) toVW(114, $maxWidth);
+        @media (max-width: 1199.98px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    //.guide-block__content
+
+    &__content {
+        // border: 2px solid lawngreen;
+        // padding-block: toRem(62);
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-block: toRem(101);
+        @media (max-width: 1199.98px) {
+            justify-content: center;
+        }
+    }
+
+    //.guide-block__content-body
+
+    &__content-body {
+        // flex: 0 1 toRem(632);
+        flex: 0 1 toRem(782);
+        padding-inline-start: toRem(150);
+        display: flex;
+        flex-direction: column;
+        row-gap: toRem(27);
+        align-items: flex-start;
+        position: relative;
+        @media (max-width: 1199.98px) {
+            padding-inline-start: toRem(75);
+        }
+
+        &::before {
+            content: attr(data-counter);
+            font-size: toRem(240);
+            font-weight: 700;
+            line-height: 1;
+            opacity: 0.1;
+            position: absolute;
+            top: toRem(-101);
+            // left: toRem(-150);
+            left: 0;
+        }
+    }
+
+    // .guide-block__subtitle
+
+    &__subtitle {
+    }
+
+    // .guide-block__title
+
+    &__title {
+        max-width: toRem(555);
+    }
+
+    // .guide-block__text
+
+    &__text {
+    }
+
+    // .guide-block__link
+
+    &__link {
+        color: $accentColor;
+        .section-link__icon {
+            fill: $accentColor;
+        }
+    }
+
+    //.guide-block__image-section
+    &__image-section {
+        // width: toVW(566, $maxWidthContainer);
+        // height: toVW(720, $maxWidthContainer);
+        // width: toRem(566);
+        // height: toRem(720);
+
+        @include adaptiveValue("width", 566, 320);
+        @include adaptiveValue("height", 720, 407);
+        flex-shrink: 0;
+    }
+    // .guide-block__image
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 566 / 720;
+    }
+}
+

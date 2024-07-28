@@ -51,7 +51,7 @@
         transition: color 0.3s;
         @media (any-hover) {
             &:hover {
-                color: $accentColor;
+                color: $accentColorDark;
             }
         }
     }
@@ -68,9 +68,9 @@
         transition: color 0.3s;
         @media (any-hover) {
             &:hover {
-                color: $accentColor;
+                color: $accentColorDark;
                 .account__icon {
-                    fill: $accentColor;
+                    fill: $accentColorDark;
                 }
             }
         }
@@ -84,23 +84,18 @@
         transition: fill 0.3s;
     }
 }
-.fixed-menu {
-    position: fixed;
-    left: 0;
-    // top: 3.59svh;
-    top: toRem(359);
-    width: 100%;
-    &__container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
 
 .social {
+    position: fixed;
+    left: toVW(4);
+    // top: 3.59svh;
+    top: toRem(359);
     display: grid;
     gap: toRem(24);
     font-weight: 700;
+    @media (max-width: 1790px) {
+        left: toRem(10);
+    }
 
     // .social__text
 
@@ -118,7 +113,7 @@
         @media (any-hover) {
             &:hover {
                 .social__icon {
-                    fill: $accentColor;
+                    fill: $accentColorDark;
                 }
             }
         }
@@ -134,7 +129,14 @@
     }
 }
 .side-menu {
+    position: fixed;
+    right: toVW(4);
+    // top: 3.59svh;
+    top: toRem(359);
     // .side-menu__list
+    @media (max-width: 1790px) {
+        right: toRem(10);
+    }
 
     &__list {
         text-align: end;
@@ -150,7 +152,7 @@
         transition: all 0.3s;
         @media (any-hover) {
             &:hover {
-                color: $accentColor;
+                color: $accentColorDark;
                 border-color: #ffffff;
             }
         }
