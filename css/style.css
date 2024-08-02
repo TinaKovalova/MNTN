@@ -52,6 +52,7 @@ a {
   text-decoration: none;
   color: inherit;
   display: inline-block;
+  cursor: pointer;
 }
 
 li {
@@ -478,10 +479,12 @@ body {
 .guide__item {
   margin-bottom: 12.5rem;
 }
-.guide__item:nth-child(even) .guide-block__wrapper .guide-block__content {
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
+@media (min-width: 1199.98px) {
+  .guide__item:nth-child(even) .guide-block__wrapper .guide-block__content {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
 }
 .guide__element {
   counter-increment: guideStep;
@@ -623,4 +626,86 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   aspect-ratio: 566/720;
+}
+
+.footer__container {
+  min-height: 17.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 3.125rem;
+}
+@media (max-width: 991.98px) {
+  .footer__container {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+.footer__info {
+  -ms-flex-preferred-size: 21.6875rem;
+      flex-basis: 21.6875rem;
+}
+@media (max-width: 991.98px) {
+  .footer__info {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
+}
+.footer__nav-list {
+  -ms-flex-preferred-size: content;
+      flex-basis: content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.875rem 13.25rem;
+}
+.footer__nav-item {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.footer__sub-menu-title {
+  color: #fbd784;
+  font-size: 1.5rem;
+  line-height: 1.33;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.info-footer {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 1.5rem;
+}
+.info-footer__text {
+  max-width: 87.3198847262%;
+  font-weight: 700;
+  line-height: 1.78;
+}
+.info-footer__copyright {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  line-height: 1.78;
+  opacity: 0.5;
+}
+
+.sub-menu {
+  line-height: 1.78;
+}
+.sub-menu__item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.sub-menu__link {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+@media (any-hover) {
+  .sub-menu__link:hover {
+    color: #ff9900;
+  }
 }

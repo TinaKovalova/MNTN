@@ -20,7 +20,7 @@ body {
 }
 .wrapper > main {
     flex-grow: 1;
-   
+    // scroll-behavior: smooth;
 }
 
 [class$="__container"] {

@@ -118,8 +118,10 @@
     }
 
     &__item:nth-child(even) {
-        .guide-block__wrapper .guide-block__content {
-            order: 2;
+        @media (min-width: $laptop) {
+            .guide-block__wrapper .guide-block__content {
+                order: 2;
+            }
         }
     }
 
