@@ -472,11 +472,21 @@ body {
   }
 }
 
-.guide__item:nth-child(odd) .guide-block__wrapper .guide-block__content {
+.guide {
+  counter-reset: guideStep;
+}
+.guide__item {
+  margin-bottom: 12.5rem;
+}
+.guide__item:nth-child(even) .guide-block__wrapper .guide-block__content {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
 }
+.guide__element {
+  counter-increment: guideStep;
+}
+
 .guide-block__wrapper {
   max-width: 82.1348314607%;
   margin: 0 auto;
@@ -541,7 +551,7 @@ body {
   }
 }
 .guide-block__content-body::before {
-  content: attr(data-counter);
+  content: counter(guideStep, decimal-leading-zero);
   font-size: 15rem;
   font-weight: 700;
   line-height: 1;

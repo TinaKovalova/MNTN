@@ -101,6 +101,7 @@
 
 //------------------------------------------
 .guide {
+    counter-reset: guideStep;
     // .guide__container
 
     &__container {
@@ -112,8 +113,11 @@
     }
 
     // .guide__item
+    &__item {
+        margin-bottom: toRem(200);
+    }
 
-    &__item:nth-child(odd) {
+    &__item:nth-child(even) {
         .guide-block__wrapper .guide-block__content {
             order: 2;
         }
@@ -122,6 +126,7 @@
     // .guide__element
 
     &__element {
+        counter-increment: guideStep;
     }
 }
 .guide-block {
@@ -171,7 +176,7 @@
         }
 
         &::before {
-            content: attr(data-counter);
+            content: counter(guideStep, decimal-leading-zero);
             font-size: toRem(240);
             font-weight: 700;
             line-height: 1;
@@ -228,4 +233,3 @@
         aspect-ratio: 566 / 720;
     }
 }
-
