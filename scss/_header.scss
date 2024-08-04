@@ -88,20 +88,34 @@
 .social {
     position: fixed;
     left: toVW(4);
-    // top: 3.59svh;
-    top: toRem(359);
-    display: grid;
+    top: toRem(270);
+    top: 38svh;
+    display: flex;
+    flex-direction: column;
+
     gap: toRem(24);
     font-weight: 700;
     @media (max-width: 1790px) {
         left: toRem(10);
     }
+    @media (max-width: $tablet) {
+        flex-direction: row;
+        row-gap: toRem(5);
+        flex-wrap: wrap;
+        position: relative;
+        left: 0;
+        top: 0;
+    }
 
     // .social__text
 
     &__text {
-        writing-mode: vertical-rl;
-        text-orientation: mixed;
+        width: 100%;
+        @media (min-width: $tablet) {
+            width: max-content;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
     }
 
     // .social__link
@@ -131,11 +145,14 @@
 .side-menu {
     position: fixed;
     right: toVW(4);
-    // top: 3.59svh;
-    top: toRem(359);
+    top: toRem(240);
+    top: 32svh;
     // .side-menu__list
     @media (max-width: 1790px) {
         right: toRem(10);
+    }
+    @media (max-width: $mobile) {
+        display: none;
     }
 
     &__list {
@@ -150,10 +167,18 @@
         padding: toRem(16) toRem(30) toRem(20);
         border-right: 3px solid rgba(#ffffff, 0.5);
         transition: all 0.3s;
+
         @media (any-hover) {
             &:hover {
                 color: $accentColorDark;
                 border-color: #ffffff;
+            }
+        }
+        @media (max-width: $tablet) {
+            padding-inline: toRem(5);
+            &:first-child .side-menu__link {
+                writing-mode: vertical-rl;
+                text-orientation: mixed;
             }
         }
 

@@ -1,11 +1,25 @@
 .intro {
     padding-top: toRem(287);
-    min-height: toRem(1903);
+    height: toVW(1695, $maxWidth);
+    min-height: toRem(700);
     background:
         linear-gradient(330deg, rgba(11, 29, 38, 0) 31.06%, #0b1d26 108.93%),
-        url("../img/bg-bottom.png") center / contain no-repeat,
-        url("../img/bg-top.png") center / contain no-repeat,
-        url("../img/bg-sky.png") top / contain no-repeat;
+        linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0b1d26 61.38%) center 110%/100% 41% no-repeat,
+        url("../img/bg-bottom.webp") center 100% / contain no-repeat,
+        url("../img/bg-top.webp") center 100% / contain no-repeat,
+        url("../img/bg-sky.webp") center -100px / contain;
+
+    @media (max-width: $tablet) {
+        padding-top: toRem(187);
+    }
+    @media (max-width: $mobile) {
+        background:
+            linear-gradient(330deg, rgba(11, 29, 38, 0) 31.06%, #0b1d26 108.93%),
+            linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0b1d26 61.38%) bottom/100% 41% no-repeat,
+            url("../img/bg-bottom.webp") center 80% / contain no-repeat,
+            url("../img/bg-top.webp") center 80% / contain no-repeat,
+            url("../img/bg-sky.webp") center -100px / cover;
+    }
 
     // .intro__container
 
@@ -51,7 +65,12 @@
 
     &__link-icon {
     }
+    // .intro__img-block
+
+    &__img-block {
+    }
 }
+
 .subtitle {
     font-weight: 800;
     letter-spacing: toRem(6);
@@ -101,6 +120,7 @@
 
 //------------------------------------------
 .guide {
+    margin-top: toVW(-400, $maxWidth);
     counter-reset: guideStep;
     // .guide__container
 
@@ -114,7 +134,9 @@
 
     // .guide__item
     &__item {
-        margin-bottom: toRem(200);
+        //margin-bottom: toRem(200);
+
+        @include adaptiveValue("margin-bottom", 200, 50);
     }
 
     &__item:nth-child(even) {
@@ -136,7 +158,7 @@
 
     &__wrapper {
         // border: 2px solid orange;
-        max-width: toPercent(1462, $containerWidth);
+
         margin: 0 auto;
         display: flex;
         justify-content: space-around;
@@ -144,6 +166,11 @@
         gap: toRem(20) toVW(114, $maxWidth);
         @media (max-width: 1199.98px) {
             flex-wrap: wrap;
+        }
+        @media (min-width: $smallMobile) {
+            max-width: toPercent(1462, $containerWidth);
+        }
+        @media (min-width: $mobile) {
         }
     }
 
@@ -156,7 +183,8 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        padding-block: toRem(101);
+        //padding-block: toRem(101);
+        @include adaptiveValue("padding-block", 101, 72);
         @media (max-width: 1199.98px) {
             justify-content: center;
         }
