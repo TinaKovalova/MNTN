@@ -177,13 +177,9 @@
     //.guide-block__content
 
     &__content {
-        // border: 2px solid lawngreen;
-        // padding-block: toRem(62);
-
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        //padding-block: toRem(101);
         @include adaptiveValue("padding-block", 101, 72);
         @media (max-width: 1199.98px) {
             justify-content: center;
@@ -193,7 +189,6 @@
     //.guide-block__content-body
 
     &__content-body {
-        // flex: 0 1 toRem(632);
         flex: 0 1 toRem(782);
         padding-inline-start: toRem(150);
         display: flex;
@@ -245,11 +240,6 @@
 
     //.guide-block__image-section
     &__image-section {
-        // width: toVW(566, $maxWidthContainer);
-        // height: toVW(720, $maxWidthContainer);
-        // width: toRem(566);
-        // height: toRem(720);
-
         @include adaptiveValue("width", 566, 300);
         @include adaptiveValue("height", 720, 407);
         flex-shrink: 0;
