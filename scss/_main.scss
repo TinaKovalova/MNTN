@@ -250,7 +250,7 @@
         // width: toRem(566);
         // height: toRem(720);
 
-        @include adaptiveValue("width", 566, 320);
+        @include adaptiveValue("width", 566, 300);
         @include adaptiveValue("height", 720, 407);
         flex-shrink: 0;
     }

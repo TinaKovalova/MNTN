@@ -13,36 +13,41 @@
         <header class="header">
             <div class="header__container">
                 <span class="logo">MNTN</span>
-                <nav class="header__navigation navigation">
+                <nav class="header__navigation navigation" data-da=".burger-menu, 991.98, 1">
                     <ul class="navigation__list">
                         <li class="navigation__item">
-                            <a href="#get-started" class="navigation__link">Equipment</a>
+                            <a href="#" class="navigation__link">Equipment</a>
                         </li>
                         <li class="navigation__item">
-                            <a href="#essentials" class="navigation__link">About us</a>
+                            <a href="#" class="navigation__link">About us</a>
                         </li>
                         <li class="navigation__item">
-                            <a href="#destination" class="navigation__link">Blog</a>
+                            <a href="#" class="navigation__link">Blog</a>
                         </li>
                     </ul>
                 </nav>
-                <div class="account">
-                    <a href="" class="account__link">
+                <div class="account" data-da=".burger-menu, 991.98, 0">
+                    <a href="#" class="account__link" target="_blank">
                         <svg class="account__icon">
                             <use href="img/icons/icons.svg#icon-user"></use>
                         </svg>
-                        Account
+                        <span class="account__link-text">Account</span>
                     </a>
                 </div>
+                <div class="burger-btn">
+                    <span></span>
+                </div>
             </div>
-            <div class="social" data-da=".info-footer__social, 991.98">
+            <div class="burger-menu"></div>
+
+            <div class="social" data-da=".burger-menu, 991.98, 2">
                 <span class="social__text">Follow us</span>
-                <a href="#" class="social__link">
+                <a href="https://www.instagram.com/" class="social__link" target="_blank">
                     <svg class="social__icon">
                         <use href="img/icons/icons.svg#icon-instagram"></use>
                     </svg>
                 </a>
-                <a href="#" class="social__link">
+                <a href="https://x.com/" class="social__link" target="_blank">
                     <svg class="social__icon">
                         <use href="img/icons/icons.svg#icon-twitter"></use>
                     </svg>
@@ -230,6 +235,7 @@
             </div>
         </footer>
     </div>
+    <script src="js/index.js"></script>
     <script src="js/dynamic_adapt.js"></script>
 </body>
 

@@ -11,16 +11,20 @@ body {
     line-height: 1.2;
     color: $mainTextColor;
     background-color: $bgColor;
+
+    &:has(.burger-menu--active) {
+        overflow: hidden;
+    }
 }
 .wrapper {
     min-height: 100%;
     overflow: clip;
     display: flex;
     flex-direction: column;
+    scroll-behavior: smooth;
 }
 .wrapper > main {
     flex-grow: 1;
-    // scroll-behavior: smooth;
 }
 
 [class$="__container"] {
