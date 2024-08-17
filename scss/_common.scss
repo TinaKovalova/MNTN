@@ -1,0 +1,123 @@
+.navigation {
+    font-size: toRem(12);
+    // .navigation__list
+
+    &__list {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: toRem(20) toRem(40);
+    }
+
+    // .navigation__item
+
+    &__item {
+        flex-shrink: 0;
+    }
+
+    // .navigation__link
+
+    &__link {
+        @include underline-hover;
+    }
+}
+.logo {
+    display: flex;
+    align-items: flex-end;
+    // .logo__icon
+
+    &__icon {
+        display: inline-block;
+        width: toRem(35);
+        height: toRem(35);
+        background: url("../img/icons/coffee-beans-logo.svg") center / cover no-repeat;
+        position: relative;
+        left: toRem(4);
+    }
+}
+.page-title {
+    font-size: toRem(40);
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+}
+.section-title {
+    font-size: toRem(24);
+    text-align: center;
+}
+.decor {
+    display: flex;
+    align-items: center;
+    column-gap: toRem(25);
+    &::after,
+    &::before {
+        content: "";
+        width: toRem(60);
+        height: toRem(1);
+        background-color: #000000;
+    }
+    &--white {
+        &::after,
+        &::before {
+            background-color: #ffffff;
+        }
+        .decor__icon {
+            filter: invert(98%) sepia(0%) saturate(5078%) hue-rotate(174deg) brightness(100%) contrast(81%);
+        }
+    }
+    // .decor__icon
+
+    &__icon {
+        flex-shrink: 0;
+        width: toRem(30);
+        height: toRem(30);
+        background: url("../img/icons/coffee-beans.svg") center / cover no-repeat;
+    }
+}
+
+.best-product {
+    width: toRem(220);
+    min-height: toRem(240);
+    padding: toRem(22) toRem(21.5);
+    border-radius: toRem(8);
+    background: rgba(255, 255, 255, 0.65);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: toRem(10);
+
+    // .best-product__link
+
+    &__img-link {
+        width: toPercent(151, 177);
+        margin-bottom: toRem(4);
+        flex-shrink: 0;
+    }
+
+    // .best-product__img
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 151 / 130;
+        object-fit: contain;
+    }
+
+    &__title-link {
+        flex-grow: 1;
+    }
+
+    // .best-product__title
+
+    &__title {
+        @include underline-hover;
+    }
+
+    // .best-product__price
+
+    &__price {
+        font-weight: 700;
+        align-self: flex-end;
+    }
+}

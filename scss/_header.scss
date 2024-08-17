@@ -1,296 +1,33 @@
 .header {
-    min-height: toRem(156);
-    padding-block: toRem(15);
-    display: flex;
+    color: #ffffff;
     position: absolute;
-    width: 100%;
-    left: 0;
     top: 0;
-    z-index: 150;
-    @media (max-width: $laptop) {
-        position: fixed;
-    }
+    left: 0;
+    width: 100%;
 
     // .header__container
 
     &__container {
-        flex-grow: 1;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: toRem(80);
-        position: relative;
-        z-index: 5;
+        flex-wrap: wrap;
+        padding-block: toRem(30);
     }
 
     // .header__navigation
 
     &__navigation {
-    }
-}
-.logo {
-    font-family: "Chronicle Display", serif;
-    font-size: toRem(32);
-    font-weight: 700;
-    letter-spacing: toRem(0.32);
-    text-transform: uppercase;
-}
-.navigation {
-    flex-grow: 1;
-    overflow-x: auto;
+        $nav-text-color: #ffffff;
 
-    @media (max-width: $laptop) {
-    }
-    // .navigation__list
-
-    &__list {
-        height: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: toRem(20) toRem(40);
-        @media (max-width: $tablet) {
-            flex-wrap: nowrap;
-            height: 80%;
-            flex-direction: column;
-            font-size: 1.5em;
-            row-gap: 3rem;
+        & .navigation__list {
+            color: $nav-text-color;
         }
-    }
-
-    // .navigation__item
-
-    &__item {
-    }
-
-    // .navigation__link
-
-    &__link {
-        font-weight: 700;
-        transition: color 0.3s;
-        @media (any-hover) {
-            &:hover {
-                color: $accentColorDark;
+        & .navigation__link {
+            &::after {
+                background-color: $nav-text-color;
             }
         }
-    }
-}
-.account {
-    // .account__link
-
-    &__link {
-        display: flex;
-        align-items: center;
-        column-gap: toRem(8);
-        font-size: toRem(17);
-        font-weight: 700;
-        transition: color 0.3s;
-        @media (any-hover) {
-            &:hover {
-                color: $accentColorDark;
-                .account__icon {
-                    fill: $accentColorDark;
-                }
-            }
+        & .logo__icon {
+            filter: invert(98%) sepia(0%) saturate(5078%) hue-rotate(174deg) brightness(100%) contrast(81%);
         }
-    }
-    // .account__icon
-
-    &__icon {
-        fill: $mainTextColor;
-        width: toRem(24);
-        height: toRem(24);
-        transition: fill 0.3s;
-    }
-}
-
-.social {
-    position: fixed;
-    left: toVW(4);
-    top: toRem(270);
-    top: 38svh;
-    display: flex;
-    flex-direction: column;
-    gap: toRem(24);
-    font-weight: 700;
-    @media (max-width: 1790px) {
-        left: toRem(10);
-    }
-    @media (max-width: $tablet) {
-        flex-direction: row;
-        row-gap: toRem(5);
-        flex-wrap: wrap;
-        position: relative;
-        top: 0;
-        left: 0;
-    }
-
-    // .social__text
-
-    &__text {
-        width: 100%;
-        @media (min-width: $tablet) {
-            width: max-content;
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-        }
-    }
-
-    // .social__link
-
-    &__link {
-        width: toRem(24);
-        height: toRem(24);
-        transition: color 0.3s;
-        @media (any-hover) {
-            &:hover {
-                .social__icon {
-                    fill: $accentColorDark;
-                }
-            }
-        }
-    }
-
-    // .social__icon
-
-    &__icon {
-        fill: $mainTextColor;
-        width: 100%;
-        height: 100%;
-        transition: fill 0.3s;
-    }
-}
-.side-menu {
-    position: fixed;
-    right: toVW(4);
-    top: toRem(240);
-    z-index: 1;
-    top: 32svh;
-    // .side-menu__list
-    @media (max-width: 1790px) {
-        right: toRem(10);
-    }
-    @media (max-width: $mobile) {
-        display: none;
-    }
-
-    &__list {
-        text-align: end;
-        font-weight: 700;
-    }
-
-    // .side-menu__item
-
-    &__item {
-        padding: toRem(16) toRem(30) toRem(20);
-        border-right: 3px solid rgba(#ffffff, 0.5);
-        transition: all 0.3s;
-
-        @media (any-hover) {
-            &:hover {
-                color: $accentColorDark;
-                border-color: #ffffff;
-            }
-        }
-        @media (max-width: $tablet) {
-            padding-inline: toRem(5);
-            &:first-child .side-menu__link {
-                writing-mode: vertical-rl;
-                text-orientation: mixed;
-            }
-        }
-
-        &::after {
-            content: "";
-            width: toRem(3);
-            height: 100%;
-            background-color: $mainTextColor;
-            opacity: 0.5;
-        }
-    }
-
-    // .side-menu__link
-
-    &__link {
-    }
-}
-.burger-btn {
-    display: none;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-between;
-    width: toRem(45);
-    height: 2rem;
-    @media (max-width: $tablet) {
-        display: flex;
-    }
-
-    &::before,
-    &::after {
-        content: "";
-        height: toRem(3);
-        background-color: $mainTextColor;
-    }
-    &::before {
-        width: 100%;
-    }
-    &::after {
-        width: 70%;
-    }
-    span {
-        display: inline-block;
-        order: 2;
-        height: toRem(3);
-        width: 35%;
-        background-color: $mainTextColor;
-    }
-    &--active {
-        position: relative;
-        span {
-            display: none;
-        }
-        &::after,
-        &::before {
-            position: absolute;
-            left: 0;
-            top: 50%;
-            translate: 0 -50%;
-            transform-origin: center;
-            transition: all 0.3s;
-        }
-        &::after {
-            width: 100%;
-            rotate: 45deg;
-        }
-        &::before {
-            rotate: -45deg;
-        }
-    }
-}
-.burger-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    min-width: 50%;
-    height: 100svh;
-    z-index: 3;
-    padding: toRem(156) toRem(50) toRem(50);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    row-gap: 3em;
-    background-color: $bgColor;
-    transform: translateX(100%);
-    transition: transform 0.6s;
-    @media (max-width: $mobile) {
-        min-width: 70%;
-    }
-    @media (max-width: $smallMobile) {
-        min-width: 100%;
-    }
-
-    &--active {
-        transform: translateX(0);
-        overflow-y: auto;
     }
 }
