@@ -5,9 +5,16 @@
 @import "mixins";
 
 body {
-    font-family: "Merienda", cursive;
-    font-weight: 400;
-    font-size: toRem(14);
+    font-family: "Gilroy", sans-serif;
+    font-weight: 500;
+    font-size: toRem(18);
+    line-height: 1.2;
+    color: $mainTextColor;
+    background-color: $bgColor;
+
+    &:has(.burger-menu--active) {
+        overflow: hidden;
+    }
 }
 .wrapper {
     min-height: 100%;
@@ -25,7 +32,7 @@ body {
     padding-inline: toRem(10);
     margin: 0 auto;
 }
-@import "common";
+
 @import "header";
 @import "main";
 @import "footer";
