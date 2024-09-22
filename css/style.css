@@ -360,10 +360,15 @@ body:has(.burger-menu--active) {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+.side-menu__item._selected {
+  color: #ff9900;
+  border-right: 3px solid #ff9900;
+}
 @media (any-hover) {
   .side-menu__item:hover {
-    color: #ff9900;
+    color: #fbd784;
     border-color: #ffffff;
+    border-right: 3px solid #fbd784;
   }
 }
 @media (max-width: 991.98px) {

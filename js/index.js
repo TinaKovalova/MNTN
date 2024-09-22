@@ -1,5 +1,6 @@
 const burgerBtn = document.querySelector(".burger-btn");
 const burgerMenu = document.querySelector(".burger-menu");
+const sideMenuList = document.querySelector(".side-menu__list");
 
  
 burgerBtn.addEventListener("click", (e) => {
@@ -13,5 +14,14 @@ burgerMenu.addEventListener("click", (e) => {
          burgerMenu.classList.toggle("burger-menu--active");
     }   
 })
+
+sideMenuList.addEventListener('click', (e) => {
+    console.log(e.target.closest(".side-menu__item"));
+    if (e.target.closest('.side-menu__item')) {
+        sideMenuList.querySelector('._selected')?.classList.remove('_selected');
+        e.target.closest(".side-menu__item").classList.add('_selected');
+    }
+})
+
 
 
