@@ -498,7 +498,7 @@ body:has(.burger-menu--active) {
 
 .intro {
   padding-top: 17.9375rem;
-  height: 120svh;
+  height: 150svh;
   position: relative;
   overflow: hidden;
 }
@@ -515,7 +515,7 @@ body:has(.burger-menu--active) {
 @media (max-width: 991.98px) {
   .intro {
     padding-top: 11.6875rem;
-    height: 43.75rem;
+    height: 56.25rem;
   }
 }
 .intro__container {
@@ -764,74 +764,51 @@ body:has(.burger-menu--active) {
 }
 
 .guide {
-  margin-top: -40svh;
+  margin-top: -23.75rem;
   counter-reset: guideStep;
+}
+.guide__list {
+  -webkit-padding-before: 6.25rem;
+          padding-block-start: 6.25rem;
+}
+@media (min-width: 111.25em) {
+  .guide__item {
+    padding-block: 6.25rem;
+  }
+}
+@media (min-width: 24.375em) and (max-width: 111.25em) {
+  @supports (padding-block: clamp( 3.125rem , 2.2482014388rem  +  3.5971223022vw , 6.25rem )) {
+    .guide__item {
+      padding-block: clamp( 3.125rem , 2.2482014388rem  +  3.5971223022vw , 6.25rem );
+    }
+  }
+  @supports not (padding-block: clamp( 3.125rem , 2.2482014388rem  +  3.5971223022vw , 6.25rem )) {
+    .guide__item {
+      padding-block: calc(3.125rem + 3.125 * (100vw - 24.375rem) / 86.875);
+    }
+  }
+}
+@media (max-width: 24.375em) {
+  .guide__item {
+    padding-block: 3.125rem;
+  }
+}
+.guide__item:first-child {
   position: relative;
 }
-.guide::after {
+.guide__item:first-child::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: 50%;
   top: 0;
+  -webkit-transform: translate(-50%, -20%);
+      -ms-transform: translate(-50%, -20%);
+          transform: translate(-50%, -20%);
   z-index: -1;
-  width: 100%;
+  width: 100vw;
   height: 28.125rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(11, 29, 38, 0)), color-stop(61.38%, #0b1d26)) center 110%/100% 91% no-repeat;
-  background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0b1d26 61.38%) center 110%/100% 91% no-repeat;
-}
-@media (max-width: 991.98px) {
-  .guide::after {
-    height: 15.625rem;
-  }
-}
-@media (max-width: 991.98px) {
-  .guide {
-    margin-top: -20svh;
-  }
-}
-@media (min-width: 111.25em) {
-  .guide__list {
-    padding-block: 6.25rem;
-  }
-}
-@media (min-width: 24.375em) and (max-width: 111.25em) {
-  @supports (padding-block: clamp( 3.125rem , 2.2482014388rem  +  3.5971223022vw , 6.25rem )) {
-    .guide__list {
-      padding-block: clamp( 3.125rem , 2.2482014388rem  +  3.5971223022vw , 6.25rem );
-    }
-  }
-  @supports not (padding-block: clamp( 3.125rem , 2.2482014388rem  +  3.5971223022vw , 6.25rem )) {
-    .guide__list {
-      padding-block: calc(3.125rem + 3.125 * (100vw - 24.375rem) / 86.875);
-    }
-  }
-}
-@media (max-width: 24.375em) {
-  .guide__list {
-    padding-block: 3.125rem;
-  }
-}
-@media (min-width: 111.25em) {
-  .guide__item {
-    padding-block: 6.25rem;
-  }
-}
-@media (min-width: 24.375em) and (max-width: 111.25em) {
-  @supports (padding-block: clamp( 3.125rem , 2.2482014388rem  +  3.5971223022vw , 6.25rem )) {
-    .guide__item {
-      padding-block: clamp( 3.125rem , 2.2482014388rem  +  3.5971223022vw , 6.25rem );
-    }
-  }
-  @supports not (padding-block: clamp( 3.125rem , 2.2482014388rem  +  3.5971223022vw , 6.25rem )) {
-    .guide__item {
-      padding-block: calc(3.125rem + 3.125 * (100vw - 24.375rem) / 86.875);
-    }
-  }
-}
-@media (max-width: 24.375em) {
-  .guide__item {
-    padding-block: 3.125rem;
-  }
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(11, 29, 38, 0)), color-stop(61.38%, #0b1d26)) center/100% 91% no-repeat;
+  background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0b1d26 61.38%) center/100% 91% no-repeat;
 }
 @media (min-width: 1199.98px) {
   .guide__item:nth-child(even) .guide-block__wrapper .guide-block__content {
@@ -932,6 +909,11 @@ body:has(.burger-menu--active) {
             padding-inline-start: 4.6875rem;
   }
 }
+@media (max-width: 991.98px) {
+  .guide-block__content-body {
+    padding-inline: 0.625rem;
+  }
+}
 .guide-block__content-body::before {
   content: counter(guideStep, decimal-leading-zero);
   font-size: 15rem;
@@ -945,6 +927,12 @@ body:has(.burger-menu--active) {
 @media (max-width: 991.98px) {
   .guide-block__content-body::before {
     font-size: 12.5rem;
+  }
+}
+@media (max-width: 991.98px) {
+  .guide-block__subtitle {
+    -webkit-padding-start: 1.25rem;
+            padding-inline-start: 1.25rem;
   }
 }
 .guide-block__title {

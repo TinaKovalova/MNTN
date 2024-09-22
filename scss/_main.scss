@@ -1,6 +1,6 @@
 .intro {
     padding-top: toRem(287);
-    height: 120svh;
+    height: 150svh;
     position: relative;
     overflow: hidden;
     &::before {
@@ -16,7 +16,7 @@
 
     @media (max-width: $tablet) {
         padding-top: toRem(187);
-        height: toRem(700);
+        height: toRem(900);
     }
     @media (max-width: $mobile) {
     }
@@ -191,24 +191,12 @@
 
 //------------------------------------------
 .guide {
-    margin-top: -40svh;
+    margin-top: toRem(-380);
+
     counter-reset: guideStep;
-    position: relative;
-    &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: -1;
-        width: 100%;
-        height: toRem(450);
-        background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0b1d26 61.38%) center 110%/100% 91% no-repeat;
-        @media (max-width: $tablet) {
-            height: toRem(250);
-        }
-    }
+
     @media (max-width: $tablet) {
-        margin-top: -20svh;
+        // margin-top: -20svh;
     }
 
     // .guide__container
@@ -219,12 +207,26 @@
     // .guide__list
 
     &__list {
-        @include adaptiveValue("padding-block", 100, 50);
+        padding-block-start: toRem(100);
     }
 
     // .guide__item
     &__item {
         @include adaptiveValue("padding-block", 100, 50);
+        &:first-child {
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translate(-50%, -20%);
+                z-index: -1;
+                width: 100vw;
+                height: toRem(450);
+                background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0b1d26 61.38%) center/100% 91% no-repeat;
+            }
+        }
     }
 
     &__item:nth-child(even) {
@@ -285,6 +287,9 @@
         @media (max-width: 1199.98px) {
             padding-inline-start: toRem(75);
         }
+        @media (max-width: $tablet) {
+            padding-inline: toRem(10);
+        }
 
         &::before {
             content: counter(guideStep, decimal-leading-zero);
@@ -304,7 +309,12 @@
     // .guide-block__subtitle
 
     &__subtitle {
+        @media (max-width: $tablet) {
+            padding-inline-start: toRem(20);
+        }
     }
+
+    // guide-block__ inner-content
 
     // .guide-block__title
 
