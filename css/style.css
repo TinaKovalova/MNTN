@@ -193,11 +193,6 @@ body:has(.burger-menu--active) {
   text-transform: uppercase;
 }
 
-.navigation {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
 .navigation__list {
   height: 100%;
   display: -webkit-box;
@@ -463,9 +458,12 @@ body:has(.burger-menu--active) {
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 3;
   min-width: 50%;
   height: 100svh;
-  z-index: 3;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   padding: 3.75rem 3.125rem 3.125rem;
   display: -webkit-box;
   display: -ms-flexbox;
